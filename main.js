@@ -14,6 +14,7 @@ if (typeof page_st !== "undefined") {
             // Предполагается, что json - это массив
             if (Array.isArray(json)) {
 				console.log(json);
+				console.log(json[0]);
                /* document.querySelector("#val1").value = json[0] || '';
                 document.querySelector("#val2").value = json[1] || '';
                 document.querySelector("#val3").value = json[2] || '';
