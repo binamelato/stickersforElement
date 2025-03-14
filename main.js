@@ -14,18 +14,18 @@ if (typeof page_st !== "undefined") {
             // Предполагается, что json - это массив
             if (Array.isArray(json)) {
 				console.log(json);
-                document.querySelector("#val1").value = json[0] || '';
+               /* document.querySelector("#val1").value = json[0] || '';
                 document.querySelector("#val2").value = json[1] || '';
                 document.querySelector("#val3").value = json[2] || '';
                 document.querySelector("#homuch").value = json[3] || '';
                 document.querySelector("#drivers").value = json[4] || '';
-                document.querySelector("#dayWeek").value = json[5] || '';
+                document.querySelector("#dayWeek").value = json[5] || '';*/
             } else {
                 console.error('Ожидался массив JSON');
             }
         })
         .catch(error => {
-            console.error('Ошибка при загрузке JSON:', error);
+            console.error('Ошибка при загрузке JSON', error);
         });
 	}
 
