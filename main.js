@@ -31,6 +31,6 @@ if (typeof page_st !== "undefined") {
 
 // Укажите URL вашего JSON файла
 //const jsonUrl = 'https://example.com/path/to/your/file.json';
-const jsonUrl = './library.json';
+const jsonUrl = 'https://binamelato.github.io/stickersforElement/library.json';
 readJsonFromUrl(jsonUrl);
 }
