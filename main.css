@@ -1,6 +1,7 @@
 div{width:100%;}
 #stick_head{
 display: flex;
+border-bottom:1px solid #dedede;
 }
 #stick_body{
 }
