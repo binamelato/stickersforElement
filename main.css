@@ -1,8 +1,44 @@
 
 div{width:100%;}
 #stick_head{
-	
+display: flex;
 }
-#stick_body{
-	
+#stick_body{}
+#stick_search{
+	margin: 10px 0px;
+	height: 50px;
+    --search-box-radius: 22px;
+    user-select: none;
+    --elevation: 4;
+    border-radius: var(--search-box-radius);
+    position: relative;
+    font-family: var(--body-font);
+    box-shadow: 0 0 calc((var(--elevation)* 0.225px) + 2px) rgba(0, 0, 0, calc(.11 * (2 - 1))), 0 calc(var(--elevation)* 0.4px) calc((var(--elevation)* 0.9px)) rgba(0, 0, 0, calc(.13 * (2 - 1)));
+}
+#stick_search input{
+	height: 50px;
+    appearance: none;
+    outline: none;
+    background: transparent;
+    margin-top: var(--marg_otstyp);
+    margin-bottom: var(--marg_otstyp);
+    border: none;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    font-family: inherit;
+    padding-inline-start: 16px;
+    background-color: #3737370d;
+    border-radius: 22px;
+    font-weight: 600;
+}
+#stick_head div{
+	box-shadow: 0 0 1px 1px #e3e3e3;
+	border-radius:9px;
+	width:150px;
+	height:150px;
+}
+#stick_head div img{
+	width:100%;
+	height:100%;
 }
