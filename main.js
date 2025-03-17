@@ -32,7 +32,7 @@ if(typeof page_st !== "undefined"){
 		//taffi 34
 		var n = 34;		
 		for(j=1;j<=n;j++){					
-			body_mod.insertAdjacentHTML('beforeend','<img id="'+j+'" src="'+s_url+'/'+j+'.webp">');
+			body_mod.insertAdjacentHTML('beforeend','<div class="stickers"><img id="'+j+'" src="'+s_url+'/'+j+'.webp"></div>');
 		}
 		//строим вкладки на странице
 		head_mod.insertAdjacentHTML('beforeend','<div><img id="" src="'+s_url+'/1.webp"></div>');
