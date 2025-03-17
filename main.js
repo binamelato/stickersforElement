@@ -1,10 +1,9 @@
 if(typeof page_st !== "undefined"){
-//const jsonUrl = 'https://example.com/path/to/your/file.json';
 const s_host = 'https://binamelato.github.io/stickersforElement/';
 const jsonUrl = s_host+'library.json';
 head_mod = document.querySelector('#stick_head');
 body_mod = document.querySelector('#stick_body');
-	
+const wih = Math.floor(document.documentElement.scrollWidth / 4);//ширина исходя из размера страниы
 	
 	function readJsonFromUrl(url){
     fetch(url)
@@ -38,17 +37,17 @@ body_mod = document.querySelector('#stick_body');
 			body_mod.insertAdjacentHTML('beforeend','<div id="t'+l+'" class="tabs -active"></div>');
 			var tabsStick = document.querySelector('#t0'); 
 			for(j=1;j<=n;j++){					
-				tabsStick.insertAdjacentHTML('beforeend','<div class="stickers"><img id="'+j+'" src="'+s_url+'/'+j+'.webp"></div>');
+				tabsStick.insertAdjacentHTML('beforeend','<div class="stickers" style="width:'+wih+';height:'+wih+'"><img id="'+j+'" src="'+s_url+'/'+j+'.webp"></div>');
 			}		
-			head_mod.insertAdjacentHTML('beforeend','<div class="stick_h -act"><img src="'+s_url+'/1.webp"></div>');
+			head_mod.insertAdjacentHTML('beforeend','<div class="stick_h -act" style="width:'+wih+';height:'+wih+'"><img src="'+s_url+'/1.webp"></div>');
 		}else{
 			var n = 17;	//брать из json	
 			body_mod.insertAdjacentHTML('beforeend','<div id="t'+l+'" class="tabs"></div>');
 			var tabsStick = document.querySelector('#t'+l);
 			for(j=1;j<=n;j++){					
-				tabsStick.insertAdjacentHTML('beforeend','<div class="stickers"><img id="'+j+'" src="'+s_url+'/'+j+'.webp"></div>');
+				tabsStick.insertAdjacentHTML('beforeend','<div class="stickers" style="width:'+wih+';height:'+wih+'"><img id="'+j+'" src="'+s_url+'/'+j+'.webp"></div>');
 			}		
-			head_mod.insertAdjacentHTML('beforeend','<div class="stick_h"><img src="'+s_url+'/1.webp"></div>');
+			head_mod.insertAdjacentHTML('beforeend','<div class="stick_h" style="width:'+wih+';height:'+wih+'"><img src="'+s_url+'/1.webp"></div>');
 		}
 		
 		massTabs = document.querySelectorAll(".stick_h");
