@@ -59,48 +59,45 @@ body_mod = document.querySelector('#stick_body');
 	
 	function tabsClick(e){		
 		tabsNow = e.target;
-		//console.log(tabsNow);
 		tabsCont = tabsNow.classList.contains('stick_h');
 		if(tabsCont == true){
 			tTrue = tabsNow.classList.contains('-act');
 			if(tTrue == true){}else{
 				tabActive = document.querySelector(".-active");
 				if(tabActive){
-					tabActive.classList.remove('-active');
-					tabsNow.classList.add('-active');
+					tabActive.classList.remove('-act');
+					tabsNow.classList.add('-act');
 					/*					
-					panelTab = document.querySelectorAll(".panelT");
+					panelTab = body_mod.querySelectorAll(".tabs");
 					var tempPerch = myArray.indexOf(tabsNow);					
-					tempTab = panelTab[tempPerch];					
-					panelActive = document.querySelector(".-visible");
-					panelActive.classList.remove('-visible');
-					var statusTab = tempTab.classList.contains('-visible');
+					tempTab = panelTab[tempPerch];	
+					
+					panelActive = document.querySelector(".-active");
+					panelActive.classList.remove('-active');
+					
+					var statusTab = tempTab.classList.contains('-active');
 					if(statusTab == false){
-						tempTab.classList.toggle('-visible');						
+						tempTab.classList.toggle('-active');						
 					}
 					*/
 				}									
 			}
 		}else{//если картинка ищем родителя
 			getParentTabs = tabsNow.parentElement;//получаем родителя
-			console.log(getParentTabs);
 			tabsCont = getParentTabs.classList.contains('-act');//активен ли набор?
 			if(tabsCont == true){}else{//если да, ничего не делаем, иначе
 				tabActive = document.querySelector(".-act");
 				if(tabActive){
-					console.log(tabActive);
 					tabActive.classList.remove('-act');
 					getParentTabs.classList.add('-act');	
 					
 					panelTab = body_mod.querySelectorAll(".tabs");
 					var tempPerch = myArray.indexOf(getParentTabs);
 					tempTab = panelTab[tempPerch];	
-					console.log(tempTab);
 					
 					panelActive = document.querySelector(".-active");
 					panelActive.classList.remove('-active');
-					
-					
+										
 					var statusTab = tempTab.classList.contains('-active');
 					if(statusTab == false){
 						tempTab.classList.toggle('-active');						
