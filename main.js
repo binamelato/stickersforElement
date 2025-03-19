@@ -37,7 +37,7 @@ const wih = Math.floor(document.documentElement.scrollWidth / 4);//ширина 
 			body_mod.insertAdjacentHTML('beforeend','<div id="t'+l+'" class="tabs -active"></div>');
 			var tabsStick = document.querySelector('#t0'); 
 			for(j=1;j<=n;j++){					
-				tabsStick.insertAdjacentHTML('beforeend','<div class="stickers" style="width:'+wih+';height:'+wih+'"><img id="'+j+'" src="'+s_url+'/'+j+'.webp"></div>');
+				tabsStick.insertAdjacentHTML('beforeend','<div class="stickers" style="width:'+wih+';height:'+wih+'"><img id="'+j+'" src="'+s_url+'/'+j+'.webp" onclick="sendSticker(this.src)"></div>');
 			}		
 			head_mod.insertAdjacentHTML('beforeend','<div class="stick_h -act" style="width:'+wih+';height:'+wih+'"><img src="'+s_url+'/1.webp"></div>');
 		}else{
@@ -45,7 +45,7 @@ const wih = Math.floor(document.documentElement.scrollWidth / 4);//ширина 
 			body_mod.insertAdjacentHTML('beforeend','<div id="t'+l+'" class="tabs"></div>');
 			var tabsStick = document.querySelector('#t'+l);
 			for(j=1;j<=n;j++){					
-				tabsStick.insertAdjacentHTML('beforeend','<div class="stickers" style="width:'+wih+';height:'+wih+'"><img id="'+j+'" src="'+s_url+'/'+j+'.webp"></div>');
+				tabsStick.insertAdjacentHTML('beforeend','<div class="stickers" style="width:'+wih+';height:'+wih+'"><img id="'+j+'" src="'+s_url+'/'+j+'.webp" onclick="sendSticker(this.src)"></div>');
 			}		
 			head_mod.insertAdjacentHTML('beforeend','<div class="stick_h" style="width:'+wih+';height:'+wih+'"><img src="'+s_url+'/1.webp"></div>');
 		}
@@ -106,6 +106,41 @@ const wih = Math.floor(document.documentElement.scrollWidth / 4);//ширина 
 			}
 		}
 	}
+	
+	function sendSticker(imageUrl){
+    // Получите токен доступа и идентификатор комнаты
+    const accessToken = 'syt_a2FkYW50b3I_TZhfIYTHiMetZZdIVlZN_14lv5H'; // Замените на реальный токен
+    const roomId = '!mTTbTxfdkDVWuwOqzW:VCMat'; // Замените на реальный идентификатор комнаты
+
+    // Создайте объект с данными для отправки
+    const content = {
+        msgtype: "m.image",
+        url: imageUrl,
+        body: "Sticker",
+        info: {
+            mimetype: "image/webp",
+            w: 150, // ширина изображения
+            h: 150 // высота изображения
+        }
+    };
+
+    // Отправьте запрос на сервер Matrix
+    fetch(`https://matrix.server.name/_matrix/client/r0/rooms/${encodeURIComponent(roomId)}/send/m.room.message`, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(content)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Sticker sent successfully:', data);
+    })
+    .catch(error => {
+        console.error('Error sending sticker:', error);
+    });
+}
 
 readJsonFromUrl(jsonUrl);
 }

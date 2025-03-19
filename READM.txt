@@ -1,0 +1,20 @@
+Serve everything under web/ using your webserver of choice. Make sure not to serve the top-level data, as config.json and the Telethon session file contain sensitive data.
+
+Type /devtools in chat. Other -> Explore account data in Element Web (not "room account data", must be the global one), edit the m.widgets account data event to have the following content:
+
+{
+    "stickerpicker": {
+        "content": {
+            "type": "m.stickerpicker",
+            "url": "https://binamelato.github.io/stickersforElement/?theme=$theme",
+            "name": "Stickerpicker",
+            "creatorUserId": "@you:matrix.server.name",
+            "data": {}
+        },
+        "sender": "@you:matrix.server.name",
+        "state_key": "stickerpicker",
+        "type": "m.widget",
+        "id": "stickerpicker"
+    }
+}
+If you do not yet have a m.widgets event, simply create it with that content. You can also use the client-server API directly instead of using Element Web.
