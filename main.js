@@ -110,8 +110,8 @@ const wih = Math.floor(document.documentElement.scrollWidth / 4);//ширина 
 	function sendSticker(imageUrl){
     // Получите токен доступа и идентификатор комнаты
     const accessToken = 'syt_a2FkYW50b3I_TZhfIYTHiMetZZdIVlZN_14lv5H'; // Замените на реальный токен
-    const roomId = '!mTTbTxfdkDVWuwOqzW:VCMat'; // Замените на реальный идентификатор комнаты
-
+    const roomId = '!mTTbTxfdkDVWuwOqzW'; // Замените на реальный идентификатор комнаты
+	//!mTTbTxfdkDVWuwOqzW:VCMat
     // Создайте объект с данными для отправки
     const content = {
         msgtype: "m.image",
