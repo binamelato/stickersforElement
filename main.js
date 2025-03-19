@@ -112,6 +112,8 @@ const wih = Math.floor(document.documentElement.scrollWidth / 4);//ширина 
     const accessToken = 'syt_a2FkYW50b3I_TZhfIYTHiMetZZdIVlZN_14lv5H'; // Замените на реальный токен
     const roomId = '!mTTbTxfdkDVWuwOqzW'; // Замените на реальный идентификатор комнаты
 	//!mTTbTxfdkDVWuwOqzW:VCMat
+	//!vepwzzdvzVySxrBJbF:VCMat
+	
     // Создайте объект с данными для отправки
     const content = {
         msgtype: "m.image",
