@@ -125,9 +125,10 @@ const wih = Math.floor(document.documentElement.scrollWidth / 4);//ширина 
             h: 150 // высота изображения
         }
     };
-
+	// https://matrix.server.name
+	// https://matrix.vcmat.ru
     // Отправьте запрос на сервер Matrix
-    fetch(`https://matrix.server.name/_matrix/client/r0/rooms/${encodeURIComponent(roomId)}/send/m.room.message`, {
+    fetch(`https://matrix.vcmat.ru/_matrix/client/r0/rooms/${encodeURIComponent(roomId)}/send/m.room.message`, {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${accessToken}`,
